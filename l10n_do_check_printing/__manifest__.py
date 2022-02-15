@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #  Copyright (c) 2015 - Marcos Organizador de Negocios SRL.
 #  (<https://marcos.do/>)
@@ -39,7 +38,7 @@
 
 {
     "name": "Impresion de cheques bancos Domnicanos",
-    "version": "1.0",
+    "version": "13.0.1.0.0",
     "author": "Eneldo Serrata - Marcos Organizador de Negocios, SRL.",
     "website": "http://marcos.do",
     "category": "Localization",

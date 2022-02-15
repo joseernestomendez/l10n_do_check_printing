@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #  Copyright (c) 2015 - Marcos Organizador de Negocios SRL.
 #  (<https://marcos.do/>)
@@ -36,13 +35,12 @@
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 # USE OR OTHER DEALINGS IN THE SOFTWARE.
 ###############################################################################
-from openerp import models, api
+from odoo import models, api
 
 
 class PrintCheck(models.AbstractModel):
     _name = "report.l10n_do_check_printing.check_print_report"
 
-    @api.multi
     def render_html(self, docids, data=None):
         report_obj = self.env["report"]
         report = report_obj._get_report_from_name(

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #  Copyright (c) 2015 - Marcos Organizador de Negocios SRL.
 #  (<https://marcos.do/>)
@@ -56,7 +55,6 @@ class account_register_payments(models.TransientModel):
 class account_payment(models.Model):
     _inherit = "account.payment"
 
-    @api.multi
     @api.depends("amount")
     def get_amont_in_word(self):
         for rec in self:
@@ -83,12 +81,10 @@ class account_payment(models.Model):
                         _(u"El número del cheque debe de ser único.")
                     )
 
-    @api.multi
     def post(self):
         self.onchange_check_number()
         return super(account_payment, self).post()
 
-    @api.multi
     def do_print_checks(self):
         check_layout = self[0].journal_id.check_layout
         if check_layout:
@@ -101,7 +97,6 @@ class account_payment(models.Model):
     def _onchange_amount(self):
         self.check_amount_in_words = self.amont_in_word
 
-    @api.multi
     def print_checks(self):
         res = super(account_payment, self).print_checks()
         if not self[0].journal_id.check_manual_sequencing:
