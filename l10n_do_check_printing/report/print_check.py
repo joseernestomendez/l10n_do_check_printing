@@ -40,13 +40,14 @@ from openerp import models, api
 
 
 class PrintCheck(models.AbstractModel):
-    _name = 'report.l10n_do_check_printing.check_print_report'
+    _name = "report.l10n_do_check_printing.check_print_report"
 
     @api.multi
     def render_html(self, docids, data=None):
-        report_obj = self.env['report']
+        report_obj = self.env["report"]
         report = report_obj._get_report_from_name(
-            'l10n_do_check_printing.check_print_report')
+            "l10n_do_check_printing.check_print_report"
+        )
 
         payment_ids = self.env[report.model].browse(docids)
 
@@ -55,18 +56,29 @@ class PrintCheck(models.AbstractModel):
             payment.payment_date
             year, month, day = payment.payment_date.split("-")
             payment.report_date = "{} {} {} {} {} {} {} {}".format(
-                day[0], day[1], month[0], month[1], year[0], year[1], year[2],
-                year[3])
-            payment.report_amount = '{:20,.2f}'.format(payment.amount).strip()
-            payment.report_communication = payment.communication.rstrip(
-                '\r|\n') if payment.communication else ""
+                day[0],
+                day[1],
+                month[0],
+                month[1],
+                year[0],
+                year[1],
+                year[2],
+                year[3],
+            )
+            payment.report_amount = "{:20,.2f}".format(payment.amount).strip()
+            payment.report_communication = (
+                payment.communication.rstrip("\r|\n")
+                if payment.communication
+                else ""
+            )
 
             payments.append(payment)
 
         docargs = {
             "doc_ids": docids,
             "doc_model": report.model,
-            "docs": payments
+            "docs": payments,
         }
-        return report_obj.render('l10n_do_check_printing.check_print_report',
-                                 docargs)
+        return report_obj.render(
+            "l10n_do_check_printing.check_print_report", docargs
+        )

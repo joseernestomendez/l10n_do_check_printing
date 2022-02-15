@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ###############################################################################
 #  Copyright (c) 2015 - Marcos Organizador de Negocios SRL.
-#  (<https://marcos.do/>) 
+#  (<https://marcos.do/>)
 #  Write by Eneldo Serrata (eneldo@marcos.do)
 #  See LICENSE file for full copyright and licensing details.
 #

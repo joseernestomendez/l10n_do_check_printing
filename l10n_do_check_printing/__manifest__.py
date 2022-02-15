@@ -38,17 +38,16 @@
 ###############################################################################
 
 {
-    'name': 'Impresion de cheques bancos Domnicanos',
-    'version': '1.0',
-    'author': 'Eneldo Serrata - Marcos Organizador de Negocios, SRL.',
-    'website': "http://marcos.do",
-    'category': 'Localization',
-
-    'summary': """
+    "name": "Impresion de cheques bancos Domnicanos",
+    "version": "1.0",
+    "author": "Eneldo Serrata - Marcos Organizador de Negocios, SRL.",
+    "website": "http://marcos.do",
+    "category": "Localization",
+    "summary": """
     Localizacion Para Republica Dominicana
     Permite configurar desde los diarios las plantillas para impresion de
     chques.""",
-    'description': """
+    "description": """
         Este módulo permite configurar sus cheques de pagos en el papel de
         verificación pre-impreso.
         Puede configurar la salida (distribución, información trozos, etc.)
@@ -56,14 +55,14 @@
         (si utiliza cheques preimpresos sin números) en la configuración de
         diario.
     """,
-    'depends': ['account_check_printing', 'ncf_manager'],
-    'data': [
-        'security/ir.model.access.csv',
-        'report/paper_data.xml',
-        'report/report_data.xml',
-        'report/report_template.xml',
-        'views/account_view.xml',
-        'views/check_report_config_view.xml'
+    "depends": ["account_check_printing", "ncf_manager"],
+    "data": [
+        "security/ir.model.access.csv",
+        "report/paper_data.xml",
+        "report/report_data.xml",
+        "report/report_template.xml",
+        "views/account_view.xml",
+        "views/check_report_config_view.xml",
     ],
-    'installable': True,
+    "installable": True,
 }

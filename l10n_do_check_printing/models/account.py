@@ -48,4 +48,5 @@ class InheritedAccountJournal(models.Model):
         string="Plantilla de cheque",
         help=u"Seleccione el formato que corresponde al papel en el que va a"
         u" imprimir sus cheques.\n Para desactivar la función de impresión,"
-        " seleccione 'Ninguno'.")
+        " seleccione 'Ninguno'.",
+    )

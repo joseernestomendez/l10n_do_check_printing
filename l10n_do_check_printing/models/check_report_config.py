@@ -51,28 +51,41 @@ class CheckReportConfig(models.Model):
     header = fields.Float(string="Margen superior de la coletilla")
 
     header_date = fields.Float(
-        string="Margen superior de la fecha de la coletilla")
+        string="Margen superior de la fecha de la coletilla"
+    )
     header_date_left = fields.Float(
-        string="Margen izquierdo de la fecha de la coletilla")
+        string="Margen izquierdo de la fecha de la coletilla"
+    )
 
     header_concept = fields.Float(
-        string="Margen superior del concepto de la coletilla")
+        string="Margen superior del concepto de la coletilla"
+    )
     header_concept_left = fields.Float(
-        string="Margen izquierdo del concepto de la coletilla")
+        string="Margen izquierdo del concepto de la coletilla"
+    )
 
     header_amount = fields.Float(
-        string="Margen superior del monto de la coletilla")
+        string="Margen superior del monto de la coletilla"
+    )
     header_amount_left = fields.Float(
-        string="Margen izquierdo del monto de la coletilla")
+        string="Margen izquierdo del monto de la coletilla"
+    )
 
-    without_amount = fields.Boolean(string="Con monto en el concepto",)
-    without_date = fields.Boolean(string="Con fecha en el concepto",)
-    without_foot = fields.Boolean(string="Con pie contable",)
+    without_amount = fields.Boolean(
+        string="Con monto en el concepto",
+    )
+    without_date = fields.Boolean(
+        string="Con fecha en el concepto",
+    )
+    without_foot = fields.Boolean(
+        string="Con pie contable",
+    )
 
     # ########## Cuerpo del Cheque ############
     # Margen superior del cheque
-    body_top = fields.Float(string="Margen superior del cuerpo del cheque",
-                            default=23)
+    body_top = fields.Float(
+        string="Margen superior del cuerpo del cheque", default=23
+    )
 
     # Margenes de la fecha de emision de cheque
     date_top = fields.Float(string="Margen superior de fecha", default=4.2)
@@ -84,38 +97,49 @@ class CheckReportConfig(models.Model):
 
     # Margenes del monto del cheque
     amount_top = fields.Float(string="Margen superior del monto", default=20)
-    amount_left = fields.Float(string="Margen izquierdo del monto",
-                               default=192)
+    amount_left = fields.Float(
+        string="Margen izquierdo del monto", default=192
+    )
 
     # Margenes del monto en letras
-    amount_letter_top = fields.Float(string="Margen superior monto en letras",
-                                     default=31)
-    amount_letter_left = fields.Float(string="Margen izq. monto en letras",
-                                      default=20)
+    amount_letter_top = fields.Float(
+        string="Margen superior monto en letras", default=31
+    )
+    amount_letter_left = fields.Float(
+        string="Margen izq. monto en letras", default=20
+    )
 
     # ########## Pie Contable ############
     check_accounting_footer_top = fields.Float(
-        "Margen superior del pie contable")
+        "Margen superior del pie contable"
+    )
     account_footer_left = fields.Float(
-        "Margen izquierdo de la cuenta contable")
+        "Margen izquierdo de la cuenta contable"
+    )
     sub_account_footer_left = fields.Float(
-        "Margen izquierdo de la sub cuenta contable")
+        "Margen izquierdo de la sub cuenta contable"
+    )
     description_footer_left = fields.Float(
-        "Margen izquierdo de la descripcion contable")
+        "Margen izquierdo de la descripcion contable"
+    )
     aux_footer_left = fields.Float("Margen izquierdo del auxiliar contable")
     debit_footer_left = fields.Float("Margen izquierdo del debito contable")
     credit_footer_left = fields.Float("Margen izquierdo del credito contable")
 
     # ########## Cabecera del Cheque ############
-    check_header_top = fields.Float("Margen superior de la Cabecera",
-                                    default=0)
-    check_header_left = fields.Float("Margen izquierdo de la Cabecera",
-                                     default=0)
-    check_header = fields.Many2one("ir.ui.view",
-                                   string="Plantilla Cabecera del cheque")
+    check_header_top = fields.Float(
+        "Margen superior de la Cabecera", default=0
+    )
+    check_header_left = fields.Float(
+        "Margen izquierdo de la Cabecera", default=0
+    )
+    check_header = fields.Many2one(
+        "ir.ui.view", string="Plantilla Cabecera del cheque"
+    )
 
     # ########## Pie del Cheque (no Contable) ############
     check_footer_top = fields.Float("Margen superior del pie", default=130)
     check_footer_left = fields.Float("Margen izquierdo del pie", default=3)
-    check_footer = fields.Many2one("ir.ui.view",
-                                   string="Plantilla Pie del cheque")
+    check_footer = fields.Many2one(
+        "ir.ui.view", string="Plantilla Pie del cheque"
+    )
